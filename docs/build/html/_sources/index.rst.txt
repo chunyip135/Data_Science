@@ -1,5 +1,5 @@
 ==================================================
-Data Science Library.
+Data Science Library
 ==================================================
 
 Collections of notes about Data Cleaning, wrangling, visualization, Machine Learning and also Deep Learning
