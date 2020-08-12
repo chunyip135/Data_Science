@@ -1,5 +1,5 @@
 ==================================================
-A documented site for Data Science related notes.
+Data Science Library
 ==================================================
 
 Collections of notes about Data Cleaning, wrangling, visualization, Machine Learning and also Deep Learning
@@ -8,9 +8,19 @@ Collections of notes about Data Cleaning, wrangling, visualization, Machine Lear
     :caption: Notes
     :maxdepth: 1
     
+    Linear_Algebra
     Probability
     Data_Cleaning
+    Data_Wrangling
     Machine_Learning
+    Deep_Learning
+
+.. toctree::
+    :caption: Python's Library
+    :maxdepth: 1
+
+    Numpy
+
 
 .. toctree::
     :caption: About

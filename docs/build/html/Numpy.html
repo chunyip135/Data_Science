@@ -1,0 +1,856 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Numpy &mdash; DS_notes  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Linear Algebra" href="Linear_Algebra.html" />
+    <link rel="prev" title="A documented site for Data Science related notes." href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> DS_notes
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Notes</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linear_Algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Probability.html">Probability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Cleaning.html">Data Cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Wrangling.html">Data_Wrangling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Machine_Learning.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Deep_Learning.html">Deep Learning</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="About_me.html">About me</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DS_notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Numpy</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Numpy.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="numpy">
+<span id="id1"></span><h1>Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p>Create a numpy array</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an 1d array from a list</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">arr1d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
+
+<span class="c1"># Print the array and its type</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">arr1d</span><span class="p">))</span>
+<span class="n">arr1d</span>
+
+<span class="c1">#&gt; class &#39;numpy.ndarray&#39;</span>
+<span class="c1">#&gt; array([0, 1, 2, 3, 4])</span>
+</pre></div>
+</div>
+<ul>
+<li><p>if apply function, it is perform on every item in the array</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add 2 to each element of arr1d</span>
+<span class="n">arr1d</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="c1">#&gt; array([2, 3, 4, 5, 6])</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>once numpy array is created, cannot increase its size</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>2D array</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a 2d array from a list of lists</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]]</span>
+<span class="n">arr2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
+<span class="n">arr2d</span>
+
+<span class="c1">#&gt; array([[0, 1, 2],</span>
+<span class="c1">#&gt;        [3, 4, 5],</span>
+<span class="c1">#&gt;        [6, 7, 8]])</span>
+</pre></div>
+</div>
+</li>
+<li><p>specify datatype by setting the dtype argument</p>
+<ul>
+<li><p>float, int, bool ,str,object</p></li>
+<li><p>control memory allocations</p>
+<ul>
+<li><p>float32 , float64, int8, int16 ..</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a float 2d array</span>
+<span class="n">arr2d_f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">list2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
+<span class="n">arr2d_f</span>
+
+<span class="c1">#&gt; array([[ 0.,  1.,  2.],</span>
+<span class="c1">#&gt;        [ 3.,  4.,  5.],</span>
+<span class="c1">#&gt;        [ 6.,  7.,  8.]])</span>
+
+<span class="n">arr2d_f</span><span class="o">.</span><span class="n">dtype</span> <span class="c1"># print its data type</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>convert to different dtype</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert to &#39;int&#39; datatype</span>
+<span class="n">arr2d_f</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+
+<span class="c1">#&gt; array([[0, 1, 2],</span>
+<span class="c1">#&gt;        [3, 4, 5],</span>
+<span class="c1">#&gt;        [6, 7, 8]])</span>
+
+<span class="c1"># Convert to int then to str datatype</span>
+<span class="n">arr2d_f</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;str&#39;</span><span class="p">)</span>
+
+<span class="c1">#&gt; array([[&#39;0&#39;, &#39;1&#39;, &#39;2&#39;],</span>
+<span class="c1">#&gt;        [&#39;3&#39;, &#39;4&#39;, &#39;5&#39;],</span>
+<span class="c1">#&gt;        [&#39;6&#39;, &#39;7&#39;, &#39;8&#39;]],</span>
+<span class="c1">#&gt;       dtype=&#39;U21&#39;)</span>
+
+<span class="c1"># Create a boolean array</span>
+<span class="n">arr2d_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;bool&#39;</span><span class="p">)</span>
+<span class="n">arr2d_b</span>
+
+<span class="c1">#&gt; array([ True, False,  True], dtype=bool)</span>
+
+<span class="c1"># Create an object array to hold numbers as well as strings</span>
+<span class="n">arr1d_obj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span>
+<span class="n">arr1d_obj</span>
+
+<span class="c1">#&gt; array([1, &#39;a&#39;], dtype=object)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>convert array to list</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr1d_obj</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>Basic syntax</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="o">.</span><span class="n">ndim</span> <span class="c1"># dimension</span>
+<span class="n">arr1</span><span class="o">.</span><span class="n">shape</span> <span class="c1"># shape ( how may rows and columns)</span>
+<span class="n">arr1</span><span class="o">.</span><span class="n">size</span> <span class="c1"># total number of elements</span>
+<span class="n">arr1</span><span class="o">.</span><span class="n">dtype</span>
+
+<span class="c1"># Extract the first 2 rows and columns</span>
+<span class="n">arr2</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">arr2</span><span class="p">[</span><span class="n">arr2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Reverse only the row positions</span>
+<span class="n">arr2</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">]</span>
+
+<span class="c1"># Reverse only column</span>
+<span class="n">arr2</span><span class="p">[:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># reverse column and row</span>
+<span class="n">arr2</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>Missing values and infinite</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="c1"># not a number</span>
+<span class="n">np</span><span class="o">.</span><span class="n">inf</span> <span class="c1"># infinite</span>
+
+<span class="c1"># Replace nan and inf with -1. Don&#39;t use arr2 == np.nan</span>
+<span class="n">missing_bool</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>
+<span class="n">arr2</span><span class="p">[</span><span class="n">missing_bool</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">arr2</span>
+
+<span class="n">arr2</span><span class="p">[(</span><span class="n">arr2</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">arr2</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</li>
+<li><p>mean ,min ,max</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr2</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="p">,</span> <span class="n">arr2</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="p">,</span> <span class="n">arr2</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="c1"># apply to whole array</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">()</span> <span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">()</span> <span class="o">...</span> <span class="c1"># have axis args</span>
+<span class="c1"># axis = 0 column wise</span>
+<span class="c1"># axis = 1 row wise</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>if a2 = a1 , then any changes in a2 will also be done on a1</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a2</span> <span class="o">=</span> <span class="n">a1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>reshaping</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">arr2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># reshape into 1 column only</span>
+<span class="n">arr2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># reshape into 1 row only</span>
+</pre></div>
+</div>
+</li>
+<li><p>flatten and ravel</p>
+<ul>
+<li><p>using ravel will affect the parent</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b2</span> <span class="o">=</span> <span class="n">arr2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span> <span class="c1"># change b2 also change arr2</span>
+
+<span class="n">b1</span> <span class="o">=</span> <span class="n">arr2</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="c1"># change b1 won&#39;t affect arr2</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>sequence</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lower limit is 0 be default</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># 0 to 9</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="c1"># 0 to 9 with step of 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># 10 to 1, decreasing order</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1">#&gt; [0 1 2 3 4]</span>
+<span class="c1">#&gt; [0 1 2 3 4 5 6 7 8 9]</span>
+<span class="c1">#&gt; [0 2 4 6 8]</span>
+<span class="c1">#&gt; [10  9  8  7  6  5  4  3  2  1]</span>
+
+<span class="c1"># Start at 1 and end at 50</span>
+<span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="c1"># specify dtype = int because it will not equally spaced due to rounding</span>
+
+<span class="c1">#&gt; array([ 1,  6, 11, 17, 22, 28, 33, 39, 44, 50]</span>
+
+<span class="c1"># Limit the number of digits after the decimal to 2</span>
+<span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Start at 10^1 and end at 10^50</span>
+<span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1">#&gt; array([  1.00e+01,   2.78e+06,   7.74e+11,   2.15e+17,   5.99e+22,</span>
+<span class="c1">#&gt;          1.67e+28,   4.64e+33,   1.29e+39,   3.59e+44,   1.00e+50])</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="c1">#&gt; array([[ 0.,  0.],</span>
+<span class="c1">#&gt;        [ 0.,  0.]])</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="c1">#&gt; array([[ 1.,  1.],</span>
+<span class="c1">#&gt;        [ 1.,  1.]])</span>
+</pre></div>
+</div>
+</li>
+<li><p>Repeating</p>
+<ul>
+<li><p>np.tile repeat a whole list or array n times while np.repeat repeats each item n times</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># [1,2,3,1,2,3]</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># [1,1,2,2,3,3]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Random</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Random numbers between [0,1) of shape 2,2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># Normal distribution with mean=0 and variance=1 of shape 2,2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># Random integers between [0, 10) of shape 2,2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]))</span>
+
+<span class="c1"># One random number between [0,1)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+
+<span class="c1"># Random numbers between [0,1) of shape 2,2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]))</span>
+
+<span class="c1"># Pick 10 items from a given list, with equal probability</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="c1"># Pick 10 items from a given list with a predefined probability &#39;p&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]))</span>  <span class="c1"># picks more o&#39;s</span>
+
+<span class="c1">#&gt; [[ 0.84  0.7 ]</span>
+<span class="c1">#&gt;  [ 0.52  0.8 ]]</span>
+
+<span class="c1">#&gt; [[-0.06 -1.55]</span>
+<span class="c1">#&gt;  [ 0.47 -0.04]]</span>
+
+<span class="c1">#&gt; [[4 0]</span>
+<span class="c1">#&gt;  [8 7]]</span>
+
+<span class="c1">#&gt; 0.08737272424956832</span>
+
+<span class="c1">#&gt; [[ 0.45  0.78]</span>
+<span class="c1">#&gt;  [ 0.03  0.74]]</span>
+
+<span class="c1">#&gt; [&#39;i&#39; &#39;a&#39; &#39;e&#39; &#39;e&#39; &#39;a&#39; &#39;u&#39; &#39;o&#39; &#39;e&#39; &#39;i&#39; &#39;u&#39;]</span>
+<span class="c1">#&gt; [&#39;o&#39; &#39;a&#39; &#39;e&#39; &#39;a&#39; &#39;a&#39; &#39;o&#39; &#39;o&#39; &#39;o&#39; &#39;a&#39; &#39;o&#39;]</span>
+</pre></div>
+</div>
+</li>
+<li><p>random same value</p>
+<ul>
+<li><p>np.random.RandomState is created, all functions of np.random module becomes available to the created randomstate object</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the random state</span>
+<span class="n">rn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Create random numbers between [0,1) of shape 2,2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rn</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1">#&gt; [[ 0.54  0.28]</span>
+<span class="c1">#&gt;  [ 0.42  0.84]]</span>
+
+<span class="c1"># Set the random seed</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Create random numbers between [0,1) of shape 2,2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1">#&gt; [[ 0.54  0.28]</span>
+<span class="c1">#&gt;  [ 0.42  0.84]]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>get unique items and counts</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">a</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">return_counts</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="p">(</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]),</span> <span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">unique</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">return_counts</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">unique</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">count</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</li>
+<li><p>Get index location and take elements</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">a1</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">a1</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="p">(</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]),)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">a1</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">a1</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">array</span><span class="p">([[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">a1</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;more than&#39;</span> <span class="p">,</span> <span class="s1">&#39;less than&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span>
+<span class="n">array</span><span class="p">([</span><span class="s1">&#39;less than&#39;</span><span class="p">,</span> <span class="s1">&#39;less than&#39;</span><span class="p">,</span> <span class="s1">&#39;less than&#39;</span><span class="p">,</span> <span class="s1">&#39;less than&#39;</span><span class="p">,</span> <span class="s1">&#39;more than&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;more than&#39;</span><span class="p">,</span> <span class="s1">&#39;more than&#39;</span><span class="p">,</span> <span class="s1">&#39;less than&#39;</span><span class="p">,</span> <span class="s1">&#39;less than&#39;</span><span class="p">,</span> <span class="s1">&#39;less than&#39;</span><span class="p">],</span>
+      <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;&lt;U9&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Get location of maximum and min values</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">a1</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="mi">5</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</li>
+<li><p>Import csv file from url and export csv</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">skip_header</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">filling_values</span> <span class="o">=</span> <span class="n">__</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;float&#39;</span><span class="p">)</span>
+<span class="c1"># filing_values : replace if exists missng values or NaN</span>
+
+<span class="n">data</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># see first 3 rows</span>
+
+<span class="c1"># Text column</span>
+
+<span class="c1"># data2 = np.genfromtxt(path, delimiter=&#39;,&#39;, skip_header=1, dtype=&#39;object&#39;)</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">skip_header</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">data2</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># see first 3 rows</span>
+
+<span class="c1"># save array as a csv file</span>
+<span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="s2">&quot;out.csv&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>numpy object : .npy, .npz</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save single numpy array object as .npy file</span>
+<span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;myarray.npy&#39;</span><span class="p">,</span> <span class="n">arr2d</span><span class="p">)</span>
+
+<span class="c1"># Save multile numy arrays as a .npz file</span>
+<span class="n">np</span><span class="o">.</span><span class="n">savez</span><span class="p">(</span><span class="s1">&#39;array.npz&#39;</span><span class="p">,</span> <span class="n">arr2d_f</span><span class="p">,</span> <span class="n">arr2d_b</span><span class="p">)</span>
+
+<span class="c1"># Load a .npy file</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;myarray.npy&#39;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;myarray.npz&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>concatenate two numpy arrays</p>
+<ul>
+<li><p>np.concatenate</p></li>
+<li><p>np.vstack / np.hstack</p></li>
+<li><p>np.r* / np.c* # use [ ]</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vertical Stack Equivalents (Row wise)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">]</span>
+
+<span class="c1"># Horizontal Stack Equivalents (Coliumn wise)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>sort array based on one or more columns</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="n">a</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">23</span><span class="p">]:</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">]])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># sort for every column</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">24</span><span class="p">]:</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">]])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># sort for every row</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">25</span><span class="p">]:</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">]])</span>
+</pre></div>
+</div>
+</li>
+<li><p>using argsort(x)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">b</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">b</span><span class="o">.</span><span class="n">argsort</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">b</span><span class="p">[</span><span class="n">b</span><span class="o">.</span><span class="n">argsort</span><span class="p">()]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">a</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">]])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">a</span><span class="p">[</span><span class="n">a</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">argsort</span><span class="p">()]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">a</span><span class="p">[</span><span class="n">a</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+</pre></div>
+</div>
+</li>
+<li><p>Date</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a datetime64 object</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="n">date64</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2018-02-04 23:10:10&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">date64</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2018-02-04T23:10:10&#39;</span><span class="p">)</span>
+
+<span class="c1"># Drop the time part from the datetime64 object</span>
+<span class="n">dt64</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="n">date64</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">)</span>
+<span class="n">dt64</span>
+</pre></div>
+</div>
+<ul>
+<li><p>add number increase number of days</p></li>
+<li><p>timedelta</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="n">dt64</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2018-02-04&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">31</span><span class="p">]:</span> <span class="n">dt64</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">31</span><span class="p">]:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2018-02-14&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="n">dt64</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">timedelta64</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2018-02-04T00:10&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="n">dt64</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">timedelta64</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2018-02-04T00:00:10&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">35</span><span class="p">]:</span> <span class="n">dt64</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">timedelta64</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;ns&#39;</span><span class="p">)</span> <span class="c1"># 10 nanoseconds</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">35</span><span class="p">]:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2018-02-04T00:00:00.000000010&#39;</span><span class="p">)</span>
+
+<span class="c1"># Convert np.datetime64 back to a string</span>
+<span class="n">np</span><span class="o">.</span><span class="n">datetime_as_string</span><span class="p">(</span><span class="n">dt64</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>business days</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">is_busday</span><span class="p">(</span><span class="n">dt64</span><span class="p">))</span> <span class="c1"># check is business days</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Add 2 business days, rolling forward to nearest biz day: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">busday_offset</span><span class="p">(</span><span class="n">dt64</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">roll</span><span class="o">=</span><span class="s1">&#39;forward&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Add 2 business days, rolling backward to nearest biz day: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">busday_offset</span><span class="p">(</span><span class="n">dt64</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">roll</span><span class="o">=</span><span class="s1">&#39;backward&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><p>sequence of dates</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2020-04-20&#39;</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2020-04-30&#39;</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">39</span><span class="p">]:</span>
+<span class="n">array</span><span class="p">([</span><span class="s1">&#39;2020-04-20&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-04-21&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-04-22&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-04-23&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;2020-04-24&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-04-25&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-04-26&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-04-27&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;2020-04-28&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-04-29&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64[D]&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">is_busday</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2020-04-20&#39;</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2020-</span>
+    <span class="o">...</span><span class="p">:</span> <span class="mi">04</span><span class="o">-</span><span class="mi">30</span><span class="s1">&#39;)))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">40</span><span class="p">]:</span>
+<span class="n">array</span><span class="p">([</span> <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>
+        <span class="kc">True</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert np.datetime64 to datetime.datetime</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">dt64</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Year: &#39;</span><span class="p">,</span> <span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Day of month: &#39;</span><span class="p">,</span> <span class="n">dt</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Month of year: &#39;</span><span class="p">,</span> <span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Day of Week: &#39;</span><span class="p">,</span> <span class="n">dt</span><span class="o">.</span><span class="n">weekday</span><span class="p">())</span>  <span class="c1"># Sunday</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>normal function can’t works on arrays</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a scalar function</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="c1"># Vectorize foo(). Make it work on vectors.</span>
+<span class="n">foo_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">otypes</span><span class="o">=</span><span class="p">[</span><span class="nb">float</span><span class="p">])</span>
+</pre></div>
+</div>
+</li>
+<li><p>Find differences of the max and min of every row</p>
+<ul>
+<li><p>numpy.apply_along_axis</p>
+<ul>
+<li><p>args :</p>
+<ul class="simple">
+<li><p>function that works on a 1D vector fund1d</p></li>
+<li><p>axis along which to apply func1d , 1 is row wise and 0 is column wise</p></li>
+<li><p>array</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define func1d</span>
+<span class="k">def</span> <span class="nf">max_minus_min</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Apply along the rows</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Row wise: &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="n">max_minus_min</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">arr</span><span class="o">=</span><span class="n">arr_x</span><span class="p">))</span>
+
+<span class="c1"># Apply along the columns</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Column wise: &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="n">max_minus_min</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">arr</span><span class="o">=</span><span class="n">arr_x</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>searchsorted, find the way location to insert so the array will remain sorted</p>
+<ul>
+<li><p>gives the index position at which a number should be inserted in order to keep the array sorted</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">46</span><span class="p">]:</span> <span class="n">a</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">46</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">47</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">47</span><span class="p">]:</span> <span class="mi">0</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">48</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">48</span><span class="p">]:</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>create new axis to a existing array</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">59</span><span class="p">]:</span> <span class="n">x</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">59</span><span class="p">]:</span> <span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">60</span><span class="p">]:</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">60</span><span class="p">]:</span> <span class="p">(</span><span class="mi">10</span><span class="p">,)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">62</span><span class="p">]:</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">62</span><span class="p">]:</span> <span class="mi">1</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">63</span><span class="p">]:</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">64</span><span class="p">]:</span> <span class="n">x</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">64</span><span class="p">]:</span>
+<span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">4</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">5</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">7</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">8</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">9</span><span class="p">]])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">65</span><span class="p">]:</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">65</span><span class="p">]:</span> <span class="mi">2</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">66</span><span class="p">]:</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">66</span><span class="p">]:</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">72</span><span class="p">]:</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,:]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">73</span><span class="p">]:</span> <span class="n">x</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">73</span><span class="p">]:</span> <span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">74</span><span class="p">]:</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">74</span><span class="p">]:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">75</span><span class="p">]:</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">75</span><span class="p">]:</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</li>
+<li></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">()</span> <span class="p">:</span> <span class="c1"># get the floor of the value if 2.3 -&gt; 2</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>a</p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Linear_Algebra.html" class="btn btn-neutral float-right" title="Linear Algebra" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="A documented site for Data Science related notes." accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Samuel Wong
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
